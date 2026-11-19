@@ -10,8 +10,8 @@ The BlackPearl Engine has been executed across multiple identical runs using fro
 - Input datasets are frozen and secured with SHA-256.
 
 ## 2. Statistical Significance (Ransomware Correlation)
-In a dataset of 1,709 records (CISA KEV catalog), the engine's structural coherence score demonstrated a non-random correlation with ransomware presence:
-- **Observed Correlation (r):** +0.077
+In a dataset of 1,766 records (CISA KEV catalog), the engine's structural coherence score demonstrated a non-random correlation with ransomware presence:
+- **Observed Correlation (r):** +0.090
 - **Randomization Test:** 1,000 shuffles.
 - **p-value:** 0.0020 (Statistically significant, outside the null distribution).
 
