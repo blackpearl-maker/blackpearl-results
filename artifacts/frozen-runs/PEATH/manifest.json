@@ -1,0 +1,12 @@
+{
+  "freeze_name": "PEATH_frozen",
+  "frozen_at_utc": "2026-09-18T21:13:43.509034+00:00",
+  "artifacts": {
+    "easy_scores": {"filename": "peath_scores_20260918T203805Z.csv", "sha256": "79922b3eaa4dd4a826316ae530946bd2c7ed5e855756c6c01d810613940b88d8", "size_bytes": 25273},
+    "easy_evidence": {"filename": "peath_evidence_20260918T203805Z.json", "sha256": "d39e576dbd251e142f644026d0155d4fd0cfced446e1127c68b42e83438b180a", "size_bytes": 2758},
+    "easy_report": {"filename": "peath_report_20260918T203805Z.md", "sha256": "a40f45e64b03e9dce9f2d0aff073e8a54e97bbb5a3092f9b8b0182789a437b0b", "size_bytes": 1255},
+    "hard_scores": {"filename": "peath_hard_scores_20260918T205359Z.csv", "sha256": "a298c748eaca226e07a5b17a197e762ab6bd580ba9b27031f273752e9903112c", "size_bytes": 27058},
+    "hard_evidence": {"filename": "peath_hard_evidence_20260918T205359Z.json", "sha256": "4202f6b14c3b64103be0898f9bddb2babdf61d4c5ff955cded6b5d85c42332e0", "size_bytes": 4278},
+    "hard_report": {"filename": "peath_hard_report_20260918T205359Z.md", "sha256": "039f9aef7b6deecb21e38285f5ec2399fa243421fb0254c124ab48a77dd4e2ab", "size_bytes": 1375}
+  }
+}

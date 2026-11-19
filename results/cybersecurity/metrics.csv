@@ -1,0 +1,5 @@
+Metric,Value,Baseline,Status
+Structural Coherence Correlation (r),0.077,0.0,Significant
+Randomization p-value,0.0020,0.05,Passed
+False Positives (Honeypot),0,N/A,Passed
+Kill Switch Response Time,0.01ms,N/A,Passed

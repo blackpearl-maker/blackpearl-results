@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "PEATH Hard Structural Path Validation",
+  "benchmark_version": "V1.1",
+  "benchmark_run_id": "PEATH-HARD-2026-09-18-RUN001",
+  "generated_at_utc": "2026-09-18T20:53:59.897590+00:00",
+  "scope_notice": "Controlled structural test on synthetic labeled findings. Confounds removed: both classes have identical finding-count and severity distributions. Ground truth = declared chain structure. This does NOT measure real-world exploitation.",
+  "engine_used": "BlackPearlEngine.calculate_coherence (embedded)",
+  "scenario_seed": 42,
+  "n_scenarios": 300,
+  "validation": {
+    "PEATH_structural_coherence": {"n": 300, "auc": 0.9144444444444444, "mrr": 1.0, "auc_ci95": {"mean": 0.9145402375746404, "lo": 0.8806558945995, "hi": 0.9433404626852716, "n": 2000}, "recall@3": 0.02, "recall@5": 0.033333333333333334, "recall@10": 0.06666666666666667},
+    "Baseline_max_weight": {"n": 300, "auc": 0.48795555555555553},
+    "Baseline_sum_weight": {"n": 300, "auc": 0.48075555555555555},
+    "Baseline_finding_count": {"n": 300, "auc": 0.48877777777777776},
+    "Baseline_max_cvss_like": {"n": 300, "auc": 0.48795555555555553}
+  },
+  "determinism": {"fingerprint_a": "00aec3ccd3cd9c6a83dd21d34b79dbc6ec5ef38dd93f7e8dcc9e9f9e50cb3784", "fingerprint_b": "00aec3ccd3cd9c6a83dd21d34b79dbc6ec5ef38dd93f7e8dcc9e9f9e50cb3784", "match": true}
+}
