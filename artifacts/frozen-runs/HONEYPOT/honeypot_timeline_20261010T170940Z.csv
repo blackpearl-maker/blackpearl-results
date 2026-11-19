@@ -1,0 +1,2 @@
+poll,timestamp,elapsed_s,events,unique_ips,coh_ia,coh_ps,combined,z_score,anomaly,confidence
+1,2026-10-10T17:09:37.675196+00:00,0.0,0,0,0.0,0.0,0.0,None,False,None

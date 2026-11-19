@@ -1,0 +1,19 @@
+{
+  "run_id": "HONEYPOT-20261010-170936",
+  "generated_at_utc": "2026-10-10T17:09:40.125806+00:00",
+  "outputs": {
+    "events_csv": null,
+    "timeline_csv": {
+      "filename": "honeypot_timeline_20261010T170940Z.csv",
+      "sha256": "e50a686b762e675173998659a73f1954107dcff95d8581011153e96f3ffffd0a"
+    },
+    "json": {
+      "filename": "honeypot_evidence_20261010T170940Z.json",
+      "sha256": "9ea96d9de1001c27507571e246b0fc24879ad0a0e1a00767adfb90b982aa767f"
+    },
+    "md": {
+      "filename": "honeypot_report_20261010T170940Z.md",
+      "sha256": "9b54becc269f238855cbaca46e373737b8b0c68f5ccdb4c9d6d90bfc86f30164"
+    }
+  }
+}
