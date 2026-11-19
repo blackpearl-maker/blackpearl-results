@@ -1,28 +1,37 @@
-# BlackPearl Deterministic Engine: Public Validation Results
+# BlackPearl — Public Validation Results
 
-This repository publishes validation reports, frozen run artifacts, and cryptographic integrity evidence for the BlackPearl Engine V3.6. It is an evidence repository; the engine's source code and internal logic are not published.
+This repository publishes selected validation reports and reproducibility evidence for the BlackPearl deterministic engine. It is an evidence repository; it does **not** contain the engine's source code or provide a runnable software package.
 
-## Review the reports in order
+## Start here
 
-The four PDF files currently visible in the repository root are:
+1. Read the [validation overview](docs/VALIDATION.md) for the reported tests, metrics, and scope.
+2. Follow the [results review guide](docs/RESULTS.md) to inspect reports and supporting artifacts.
+3. See [methodology and provenance](docs/METHODOLOGY.md) and the [independent review request](docs/REVIEW_REQUEST.md) for context on data and review boundaries.
 
-1. [Executive summary — currently named `EXECUTIVE_SUMMRY.pdf` (filename typo)](EXECUTIVE_SUMMRY.pdf)
-2. [RUN007 execution report](RUN007_report.pdf)
-3. [RUN008 execution report — currently named `RUN008.pdf`](RUN008.pdf)
-4. [PEATH structural validation report](PEATH_report.pdf)
+## Evidence
 
-For a clean presentation, please download these PDFs and re-upload them under `results/cybersecurity/` with the intended names `EXECUTIVE_SUMMARY.pdf`, `RUN007_report.pdf`, `RUN008_report.pdf`, and `PEATH_report.pdf`. The binary files are currently in the root, so the intended folder links are not active yet. See [`results/cybersecurity/README.md`](results/cybersecurity/README.md) for the upload steps and validation caveats.
+The [`results/cybersecurity/`](results/cybersecurity/) directory contains validation reports, PDFs, CSV summaries, and JSON evidence. The [`artifacts/`](artifacts/) directory contains frozen-run materials and checksums. Consult manifests and scope notes alongside any reported result.
 
-## Supporting evidence
+Selected reports:
 
-- [Validation claims and scope](docs/VALIDATION.md)
-- [Results and reviewer guidance](docs/RESULTS.md)
-- [Methodology and provenance](docs/METHODOLOGY.md)
-- [Independent review request](docs/REVIEW_REQUEST.md)
-- Frozen run artifacts and checksums under [`artifacts/`](artifacts/)
+- [RUN007 report](results/cybersecurity/RUN007_report.pdf)
+- [PEATH report](results/cybersecurity/PEATH_report.pdf)
+- [Executive summary](EXECUTIVE_SUMMARY.pdf)
+- [Detailed results and caveats](docs/RESULTS.md)
 
-## Important scope notes
+Some reports may also exist as root-level or legacy copies. The links above point to the intended review locations where available; see the directory listings if a link is unavailable.
 
-The published values are claims reported by the repository, not an independent audit or a guarantee beyond the described test conditions. The PEATH evaluation uses synthetic scenarios and is not a real-world exploitation prediction test. The honeypot summary describes one 600-second observation window. No `diagrams/` directory or visual assets are currently present in this repository; references to those images should be treated as unavailable until the actual files are added.
+## Important interpretation notes
 
-For technical questions or review feedback, open an issue. Do not upload sensitive customer data or proprietary engine code.
+- Published metrics are repository-reported results, not an independent audit or a guarantee of performance beyond the stated datasets and test conditions.
+- PEATH uses synthetic scenarios and does not establish real-world exploit prediction performance.
+- A bounded honeypot observation should not be generalized beyond its stated monitoring window and conditions.
+- The engine implementation and internal logic are proprietary and are not included here.
+
+## Reproducibility and review
+
+Reviewers can inspect the published inputs, manifests, checksums, and reports. This repository does not include a public command-line interface or enough implementation detail to rerun the engine itself. Please open an issue for questions or technical feedback; do not post sensitive data or proprietary code.
+
+## License
+
+See [LICENSE](LICENSE). The published materials are reserved for review and validation use; reuse requires permission from the rights holder.
