@@ -1,0 +1,24 @@
+{
+  "run_id": "HONEYPOT-20261010-170811",
+  "generated_at_utc": "2026-10-10T17:08:28.399856+00:00",
+  "duration_s": 600,
+  "interval_s": 10,
+  "ports": ["22", "23", "80", "443", "445", "3389", "8080"],
+  "stats": {
+    "n_events": 0,
+    "n_polls": 2,
+    "unique_ips": 0,
+    "port_distribution": {},
+    "combined_min": null,
+    "combined_mean": null,
+    "combined_max": null,
+    "combined_std": null,
+    "anomalies_count": 0,
+    "kill_switches_count": 0
+  },
+  "kill_switches": [],
+  "timeline": [
+    {"poll": 1, "timestamp": "2026-10-10T17:08:12.076701+00:00", "elapsed_s": 0.0, "events": 0, "unique_ips": 0, "coh_ia": 0.0, "coh_ps": 0.0, "combined": 0.0, "z_score": null, "anomaly": false, "confidence": null},
+    {"poll": 2, "timestamp": "2026-10-10T17:08:22.076912+00:00", "elapsed_s": 10.0, "events": 0, "unique_ips": 0, "coh_ia": 0.0, "coh_ps": 0.0, "combined": 0.0, "z_score": null, "anomaly": false, "confidence": null}
+  ]
+}
