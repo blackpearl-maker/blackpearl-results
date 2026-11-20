@@ -14,12 +14,13 @@ The [`results/cybersecurity/`](results/cybersecurity/) directory contains valida
 
 Selected reports:
 
-- [RUN007 report](results/cybersecurity/RUN007_report.pdf)
-- [PEATH report](results/cybersecurity/PEATH_report.pdf)
 - [Executive summary](EXECUTIVE_SUMMARY.pdf)
+- [RUN007 report](RUN007_report.pdf)
+- [RUN008 report](RUN008_report.pdf)
+- [PEATH report](results/cybersecurity/PEATH_report.pdf)
 - [Detailed results and caveats](docs/RESULTS.md)
 
-Some reports may also exist as root-level or legacy copies. The links above point to the intended review locations where available; see the directory listings if a link is unavailable.
+The RUN007 and RUN008 PDF links above point to the available root-level copies. See the [review guide](docs/RESULTS.md) for the full review sequence and supporting evidence.
 
 ## Important interpretation notes
 
