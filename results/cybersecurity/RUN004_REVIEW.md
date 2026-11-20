@@ -3,9 +3,9 @@
 **Run:** `BPV3-CISA-2026-09-15-RUN004` · **Version:** V3.4  
 **Population stated in evidence:** 680 records (299 KEV positives, 381 NVD-only negatives)
 
-This review is about what this run measures and what it does not. EPSS, CVSS, and Coherence are not interchangeable products. The RUN004 comparison uses them as scoring methods in one specified KEV-vs-NVD-only discrimination task; it is not a general evaluation of every use case of the Black Pearl engine.
+EPSS, CVSS, and Coherence are different scoring approaches with different intended scopes. This benchmark compares their scores on one defined task; it is not a head-to-head evaluation of every use case of the Black Pearl engine.
 
-## Results in the stated task
+## Reported results on this task
 
 | Method | AUC (reported 95% CI) | P@10 | P@50 | P@100 |
 |---|---:|---:|---:|---:|
@@ -15,26 +15,28 @@ This review is about what this run measures and what it does not. EPSS, CVSS, an
 | 9_EF Coherence | 0.6919 [0.648, 0.733] | **1.00** | **1.00** | 0.90 |
 | 10_EF Coherence | 0.7051 [0.661, 0.747] | **1.00** | **1.00** | 0.99 |
 
-In this run and task, EPSS has the strongest reported overall discrimination by AUC and perfect reported precision at the top 10, 50, and 100. CVSS-only AUC is 0.7626. Coherence has lower AUC than both baselines here, while its reported top-10 and top-50 precision is 1.00 for both feature sets; at top 100, 9_EF is 0.90 and 10_EF is 0.99. These are meaningful but different metric profiles. They do **not** show that Coherence beats EPSS on this task, and they do **not** establish that EPSS covers the broader structural analysis or prioritization purposes for which the engine is intended.
+For this sample and label definition, EPSS has the highest AUC and perfect reported P@10/P@50/P@100. CVSS-only AUC is 0.7626. Coherence has perfect reported P@10/P@50, with lower AUC; P@100 is 0.90 for 9_EF and 0.99 for 10_EF. This is a material task-specific baseline result and is stated plainly. It does not show Coherence beating EPSS on this task, nor does it test the engine's full multi-domain structural-analysis and prioritization purposes.
 
-**Scope boundary:** the benchmark labels positives as CVEs listed in CISA KEV and negatives as CVEs present in NVD but not in KEV. It measures discrimination between those groups in this sampled population. The report explicitly says it does not measure prediction of future exploitation. It also does not test the engine's full multi-domain capabilities, operational outcomes, or all prioritization workflows. Therefore, the AUC result should be stated plainly for this task, without turning it into a claim that one system is universally superior or that the systems perform the same function.
+The target is membership in CISA KEV: positives are KEV CVEs, negatives are NVD CVEs not in KEV. The report explicitly states that this is **not** prediction of future exploitation. The evidence also warns that the positive and negative publication windows may differ.
 
-## Important interpretation and caveats
+## Separate reported EPSS-correlation result
 
-- The evidence says the sample has 299 KEV positives and 381 NVD-only negatives. It notes that positive and negative publication windows may differ; this can affect the comparison.
-- The 10_EF feature set includes `ransomware_flag`. The report says this flag is non-zero only for KEV-listed ransomware CVEs, creating target leakage risk for a KEV-vs-non-KEV task. Treat the 10_EF results as an explicitly flagged ablation, not clean evidence of generalization. The 9_EF result excludes that flag.
-- Reported P@k is precision among the top k ranked records in this run. It is not, on its own, a probability calibration result or a general guarantee of operational prioritization quality.
-- The report notes incomplete NVD CVSS coverage may affect recent CVEs, and that results are preliminary and require independent replication.
-- The stated deterministic scoring methodology is not the same as independently verified reproducibility of this particular run. The available RUN004 evidence supplies bootstrap AUC confidence intervals based on 2,000 resamples; those intervals describe reported metric uncertainty under that procedure. They do **not** establish bit-for-bit repeatability across repeated engine executions.
-- No RUN004 output fingerprint or repeated-run match record was supplied in the RUN004 evidence shown here. Accordingly, RUN004's independent reproducibility status is **not established by the available artifacts**. This is not a claim that the engine is nondeterministic; it is a boundary on what this run's published evidence verifies.
+A separate validation summary reports a 3,000-record non-KEV comparison: Spearman correlation of 9_EF with EPSS is +0.5580 and CVSS with EPSS is +0.3661, difference +0.1919. This indicates greater rank association with EPSS for 9_EF in that comparison. It is not a 19-percentage-point improvement, not an AUC, and not a universal or end-to-end prioritization result. Do not combine it with RUN004's KEV-vs-NVD-only AUC table; they are different reported analyses/populations.
 
-## Integrity and artifact status
+## Feature leakage and metric interpretation
 
-- The evidence records SHA-256 `ad618e404a43d72ac6435b6e5a8d75000778b9245a6b70dbde46530152f2eef3` for the frozen CISA KEV snapshot.
-- The report and evidence are in the repository. Their listed GitHub blob IDs are SHA-1 object identifiers, not artifact SHA-256 checksums.
-- The RUN004 population CSV was supplied in chat but is not yet committed in the repository. Its byte size and SHA-256 therefore remain unverified here.
-- Keep RUN004 separate from the `...20261120T001020Z...` material: the accompanying report/evidence identify RUN007, whereas the separate supplied manifest identifies RUN008. These are not RUN004 files.
+- The 10_EF includes `ransomware_flag`, which the report says is non-zero only for KEV-listed ransomware CVEs. This risks target leakage in a KEV-vs-non-KEV test; interpret 10_EF as a flagged ablation, not clean generalization evidence. 9_EF excludes this field.
+- P@k is precision among the top k in the tested sample. It is not a calibrated probability or, by itself, a guarantee of operational prioritization quality.
+- The report notes that NVD CVSS coverage may be incomplete for recent CVEs and that independent replication is needed.
+
+## Reproducibility confidence and integrity
+
+The evidence includes 95% AUC intervals based on 2,000 resamples. These describe reported metric uncertainty under that resampling procedure; they do not verify bit-for-bit repeatability across engine executions. The supplied RUN004 evidence has no full output fingerprint or repeated-run match record, so this run's repeatability is **not established by the available RUN004 artifacts**. This does not mean the engine is nondeterministic; it marks the evidence boundary.
+
+The evidence records SHA-256 `ad618e404a43d72ac6435b6e5a8d75000778b9245a6b70dbde46530152f2eef3` for the frozen CISA KEV snapshot. The report and evidence are committed, but their displayed GitHub blob IDs are SHA-1 object identifiers, not artifact SHA-256 checksums. The RUN004 population CSV was supplied in chat but is not yet committed, so the repository does not currently have a complete RUN004 artifact package or verified checksum for that CSV.
+
+Keep RUN004 separate from the `...20261120T001020Z...` files: the accompanying report/evidence identifies RUN007, while the separately supplied manifest identifies RUN008. Those are not RUN004 artifacts.
 
 ## Bottom line
 
-RUN004 reports perfect EPSS top-k precision and higher AUC than either Coherence variant for this particular KEV-vs-NVD-only sample. It also reports perfect Coherence precision at top 10 and top 50, with lower AUC and a top-100 difference between 9_EF and 10_EF. The result is a task-bounded comparison, not a verdict on the whole engine or on structural prioritization in other domains. The structural question needs benchmarks designed around those intended tasks, with matched populations, leakage controls, explicit repeat-run fingerprints, and independent replication.
+RUN004 favors EPSS by AUC and all three reported top-k precision cutoffs on this particular KEV-vs-NVD-only sample. Coherence nevertheless reports P@10/P@50 of 1.00 and a different score profile; this does not establish broad engine performance beyond this task. The separate 9_EF-versus-EPSS correlation result is a different analysis and should be described as rank association only. Assess structural prioritization with task-specific structural benchmarks, leakage controls, full untruncated repeat-run fingerprints, verified artifact hashes, and independent replication.
