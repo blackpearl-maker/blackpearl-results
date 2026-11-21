@@ -14,7 +14,7 @@ This repository publishes selected validation reports and reproducibility eviden
 - [Executive summary](EXECUTIVE_SUMMARY.pdf)
 - [RUN007 execution report](RUN007_report.pdf), [frozen manifest](artifacts/frozen-runs/RUN007/MANIFEST.md), and [SHA-256 list](artifacts/sha256/RUN007.sha256)
 - [RUN008 execution report](RUN008_report.pdf), [frozen manifest](artifacts/frozen-runs/RUN008/MANIFEST.md), and [SHA-256 list](artifacts/sha256/RUN008.sha256)
-- [RUN004 controlled benchmark report](results/cybersecurity/black_pearl_report_20261120T042752Z.md), [evidence JSON](results/cybersecurity/black_pearl_evidence_20261120T042752Z.json), [artifact status](results/cybersecurity/RUN004_MANIFEST.md), and [baseline/reproducibility review](results/cybersecurity/RUN004_REVIEW.md)
+- RUN004 (V3.4): [benchmark report — `black_pearl_report_20261120T042752Z.md`](results/cybersecurity/black_pearl_report_20261120T042752Z.md), [matching evidence JSON — `black_pearl_evidence_20261120T042752Z.json`](results/cybersecurity/black_pearl_evidence_20261120T042752Z.json), [artifact status](results/cybersecurity/RUN004_MANIFEST.md), and [baseline/reproducibility review](results/cybersecurity/RUN004_REVIEW.md)
 - [PEATH synthetic structural-path validation](results/cybersecurity/PEATH_validation.md) and [report](results/cybersecurity/PEATH_report.pdf)
 - [Honeypot reports, artifacts, and observation-window caveat](results/cybersecurity/HONEYPOT_RESULTS.md)
 - Additional [validation tables and supporting results](results/cybersecurity/)
@@ -23,7 +23,7 @@ This repository publishes selected validation reports and reproducibility eviden
 
 EPSS, CVSS, and Coherence are different scoring approaches and are not interchangeable measures of the engine's full capabilities.
 
-In RUN004's specific task—distinguishing 299 CISA KEV-listed CVEs from 381 NVD-only CVEs—EPSS reports AUC **0.9825**, CVSS-only **0.7626**, 9_EF Coherence **0.6919**, and 10_EF Coherence **0.7051**. EPSS reports P@10/P@50/P@100 of **1.00/1.00/1.00**; Coherence reports **1.00/1.00/0.90** for 9_EF and **1.00/1.00/0.99** for 10_EF. Thus, EPSS leads by AUC and P@100 in this sample, while Coherence also reports perfect precision at the top 10 and top 50. This is a material result for this benchmark task—not a verdict on all structural-analysis or prioritization uses of the engine. The benchmark does not measure prediction of future exploitation.
+In RUN004's specific task—distinguishing 299 CISA KEV-listed CVEs from 381 NVD-only CVEs—EPSS reports AUC **0.9825**, CVSS-only **0.7626**, 9_EF Coherence **0.6919**, and 10_EF Coherence **0.7051**. EPSS reports P@10/P@50/P@100 of **1.00/1.00/1.00**; Coherence reports **1.00/1.00/0.90** for 9_EF and **1.00/1.00/0.99** for 10_EF. Thus, EPSS leads by AUC in this sample, while Coherence also reports perfect precision at the top 10 and top 50. This is a material result for this benchmark task—not a verdict on all structural-analysis or prioritization uses of the engine. The benchmark does not measure prediction of future exploitation.
 
 A separate reported analysis on 3,000 non-KEV records gives Spearman correlation with EPSS of **+0.5580** for 9_EF and **+0.3661** for CVSS (difference **+0.1919**). This is greater rank association with EPSS in that separate analysis; it is not a 19-percentage-point improvement, an AUC result, or universal proof of prioritization superiority. The populations and metrics are different; see [the validation overview](docs/VALIDATION.md) and [RUN004 review](results/cybersecurity/RUN004_REVIEW.md).
 
@@ -36,7 +36,7 @@ The PEATH report marks two displayed, **truncated** fingerprints as matching. RU
 ## Artifact completeness and limits
 
 - The RUN004 report and evidence JSON are published, but its population CSV (`black_pearl_population_20261120T042752Z.csv`) has not yet been committed. The RUN004 artifact manifest records this gap.
-- Keep runs and hashes tied to their own run IDs. RUN007, RUN008, and RUN004 are distinct; do not attach one run's manifest or hashes to another.
+- RUN004's links above intentionally use the matching `...20261120T042752Z...` report and evidence files. The similarly named `...20261120T001020Z...` report/evidence files belong to RUN007, not RUN004. RUN007, RUN008, and RUN004 are distinct; do not attach one run's manifest or hashes to another.
 - The two honeypot reports state 600-second durations, but their supplied timelines contain only two polls 10 seconds apart and one poll, respectively. Those timelines do not independently verify full 600-second polling coverage; the zero-event observation must be read with that limitation.
 - Published metrics are repository-reported results, not an independent audit or a guarantee beyond the stated datasets and conditions. Sampling windows, NVD coverage, and the 10_EF `ransomware_flag` leakage risk are material caveats.
 - The engine implementation and internal logic are proprietary and are not included here.
