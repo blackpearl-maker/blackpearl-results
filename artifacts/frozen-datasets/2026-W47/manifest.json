@@ -1,0 +1,22 @@
+{
+  "batch": "2026-W47",
+  "frozen_at_utc": "2026-11-19T01:40:15.547372Z",
+  "python_version": "3.12.3",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "artifacts": {
+    "artifact_json": {
+      "filename": "2026-W47-cisa-kev.json",
+      "sha256": "c8702c6bb31ac9cacde6ad2379477032d74fd612119c977a484423ad3d878961",
+      "size_bytes": 1968353
+    },
+    "artifact_sha256": {
+      "filename": "2026-W47-cisa-kev.json.sha256",
+      "sha256": "533696e4a45d27b095c5e2d1c93dafade8acc45be401fff0595aca5ca95901d2",
+      "size_bytes": 89
+    }
+  },
+  "source_file": {
+    "filename": "git2.py",
+    "sha256": "edbf192cef710202ff10e58bc419147a4687193c5074068b299966047350c707"
+  }
+}
